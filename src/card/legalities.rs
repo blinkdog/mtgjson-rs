@@ -11,8 +11,6 @@ pub struct Legalities {
     pub duel: Option<String>,
     pub explorer: Option<String>,
     pub future: Option<String>,
-    // TODO: remove if not needed
-    // pub frontier: Option<String>,
     pub gladiator: Option<String>,
     pub historic: Option<String>,
     pub historic_brawl: Option<String>,
