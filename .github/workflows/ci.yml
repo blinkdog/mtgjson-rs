@@ -46,9 +46,6 @@ jobs:
         with:
           path: testdata
           key: test-cache-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
-          restore-keys: |
-            test-cache-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
-            test-cache-${{ runner.os }}-
       - run: rustup update stable && rustup default stable
       - name: Download test data
         run: |

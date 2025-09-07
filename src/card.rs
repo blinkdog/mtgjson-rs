@@ -169,6 +169,9 @@ pub struct SetCard {
     /// The name of the artist that illustrated the card art.
     pub artist: Option<String>,
 
+    /// A list of identifiers for the artists that illustrated the card art.
+    pub artist_ids: Option<Vec<String>>,
+
     /// The ASCII (Basic/128) code formatted card name with no special unicode characters.
     pub ascii_name: Option<String>,
 
@@ -424,6 +427,9 @@ pub struct SetCard {
 pub struct TokenCard {
     /// The name of the artist that illustrated the card art.
     pub artist: Option<String>,
+
+    /// A list of identifiers for the artists that illustrated the card art.
+    pub artist_ids: Option<Vec<String>>,
 
     /// The ASCII (Basic/128) code formatted card name with no special unicode characters.
     pub ascii_name: Option<String>,

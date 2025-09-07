@@ -7,6 +7,9 @@ use uuid::Uuid;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BoosterSheet {
+    /// If the sheet can be picked for cards in duplicates.
+    pub allow_duplicates: Option<bool>,
+
     /// Colors of the sheet need to be balanced.
     pub balance_colors: Option<bool>,
 
@@ -15,6 +18,9 @@ pub struct BoosterSheet {
 
     /// Whether the sheet is foiled.
     pub foil: bool,
+
+    /// If cards are garunteed to be in this sheet. Used for "Jump Start"-style products.
+    pub fixed: Option<bool>,
 
     /// Sum of all card weights.
     pub total_weight: u64,

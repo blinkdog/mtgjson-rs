@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# pretty-testdata
+
+# create pretty versions of the testdata for easier searching / debugging
+
+jq . testdata/AllPrintings.json >testdata/AllPrintings.pretty.json
+jq . testdata/AtomicCards.json >testdata/AtomicCards.pretty.json
