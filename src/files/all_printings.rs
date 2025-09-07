@@ -18,9 +18,20 @@ pub struct AllPrintings {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::fs::File;
+    use std::io::BufReader;
 
+    #[cfg_attr(not(feature = "local_tests"), ignore)]
     #[test]
-    fn test_all_printings() {
+    fn test_all_printings_local() {
+        let file = File::open("testdata/AllPrintings.json").unwrap();
+        let reader = BufReader::new(file);
+        let _: AllPrintings = serde_json::from_reader(reader).unwrap();
+    }
+
+    #[cfg_attr(not(feature = "network_tests"), ignore)]
+    #[test]
+    fn test_all_printings_network() {
         let _: AllPrintings =
             reqwest::blocking::get("https://mtgjson.com/api/v5/AllPrintings.json")
                 .unwrap()

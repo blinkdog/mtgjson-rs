@@ -7,8 +7,8 @@ categories = ["data-structures"]
 description = "Unofficially provided lightweight models of the data provided by MTGJSON."
 homepage = "https://github.com/Rigidity/mtgjson-rs"
 repository = "https://github.com/Rigidity/mtgjson-rs"
-version = "0.2.0"
-edition = "2021"
+version = "5.2.2"
+edition = "2024"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
@@ -21,3 +21,8 @@ tokio = { version = "1", features = ["rt", "macros"] }
 reqwest = { version = "0.11", features = ["blocking", "json"] }
 serde_json = "1"
 serde_path_to_error = "0.1"
+
+[features]
+default = []
+local_tests = []
+network_tests = []

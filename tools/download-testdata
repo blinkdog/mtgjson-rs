@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# download-testdata
+
+# Download MTGJSON datasets for local tests:
+#     cargo test --features local_tests
+
+set -Eeuo pipefail
+
+BASE_URL=${BASE_URL:="https://mtgjson.com/api/v5"}
+TESTDATA_DIR=${TESTDATA_DIR:="testdata"}
+
+FILES=(
+    AllPrintings.json
+    AtomicCards.json
+)
+
+mkdir -p "${TESTDATA_DIR}"
+
+for datafile in "${FILES[@]}"; do
+    if [ ! -f "${TESTDATA_DIR}/${datafile}" ]; then
+        curl "${BASE_URL}/${datafile}.xz" -o "${TESTDATA_DIR}/${datafile}.xz"
+        xz -dfT0 "${TESTDATA_DIR}/${datafile}.xz"
+    fi
+done

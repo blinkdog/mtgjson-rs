@@ -46,6 +46,9 @@ pub enum Language {
     #[serde(rename = "Portuguese (Brazil)")]
     Portuguese,
 
+    #[serde(rename = "Quenya")]
+    Quenya,
+
     #[serde(rename = "Russian")]
     Russian,
 

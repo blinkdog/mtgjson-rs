@@ -11,11 +11,11 @@ pub struct BoosterSheet {
     pub balance_colors: Option<bool>,
 
     /// Cards used on a sheet.
-    pub cards: HashMap<Uuid, u32>,
+    pub cards: HashMap<Uuid, u64>,
 
     /// Whether the sheet is foiled.
     pub foil: bool,
 
     /// Sum of all card weights.
-    pub total_weight: u32,
+    pub total_weight: u64,
 }
