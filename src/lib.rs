@@ -11,6 +11,7 @@ mod identifiers;
 mod language;
 mod meta;
 mod purchase_urls;
+mod sealed_product;
 mod set;
 
 pub use booster::*;
@@ -21,4 +22,5 @@ pub use identifiers::*;
 pub use language::*;
 pub use meta::*;
 pub use purchase_urls::*;
+pub use sealed_product::*;
 pub use set::*;

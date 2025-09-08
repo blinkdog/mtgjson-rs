@@ -8,6 +8,7 @@ use crate::{
     card::{SetCard, TokenCard},
     deck_set::DeckSet,
     language::Language,
+    sealed_product::SealedProduct,
 };
 
 /// Describes the properties and values of an individual Set.
@@ -85,6 +86,9 @@ pub struct Set {
 
     /// The release date in ISO 8601 format for the set.
     pub release_date: NaiveDate,
+
+    /// The sealed product information for the set.
+    pub sealed_product: Option<Vec<SealedProduct>>,
 
     /// The group identifier of the set on TCGplayer.
     pub tcgplayer_group_id: Option<u32>,
