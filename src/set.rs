@@ -6,6 +6,7 @@ use serde::{Deserialize, Serialize};
 use crate::{
     booster::Booster,
     card::{SetCard, TokenCard},
+    deck_set::DeckSet,
     language::Language,
     sealed_product::SealedProduct,
 };
@@ -38,6 +39,9 @@ pub struct Set {
     /// The alternate set code Wizards of the Coast uses for a select few duel deck sets.
     pub code_v3: Option<String>,
 
+    /// All decks associated to the set.
+    pub decks: Option<Vec<DeckSet>>,
+
     /// If the set is available only outside the United States of America.
     pub is_foreign_only: Option<bool>,
 
@@ -58,6 +62,9 @@ pub struct Set {
 
     /// The matching Keyrune code for set image icons.
     pub keyrune_code: String,
+
+    /// The languages the set was printed in.
+    pub languages: Option<Vec<Language>>,
 
     /// The Magic Card Market set identifier.
     pub mcm_id: Option<u32>,

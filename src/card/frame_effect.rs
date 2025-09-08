@@ -5,12 +5,14 @@ use serde::{Deserialize, Serialize};
 #[serde(rename_all = "lowercase")]
 #[allow(missing_docs)]
 pub enum FrameEffect {
+    BoosterFun,
     ColorShifted,
     Companion,
     CompassLandDfc,
     ConvertDfc,
     Devoid,
     Draft,
+    Enchantment,
     Etched,
     ExtendedArt,
     FanDfc,
@@ -26,6 +28,7 @@ pub enum FrameEffect {
     ShatteredGlass,
     Showcase,
     Snow,
+    Spree,
     SunMoonDfc,
     Textless,
     Tombstone,

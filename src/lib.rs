@@ -5,6 +5,7 @@
 
 mod booster;
 mod card;
+mod deck_set;
 mod files;
 mod identifiers;
 mod language;
@@ -15,6 +16,7 @@ mod set;
 
 pub use booster::*;
 pub use card::*;
+pub use deck_set::*;
 pub use files::*;
 pub use identifiers::*;
 pub use language::*;

@@ -65,14 +65,14 @@ pub struct AtomicCard {
     pub colors: Vec<Color>,
 
     /// The converted mana cost of the card. Use the `mana_value` property.
-    #[deprecated]
-    pub converted_mana_cost: f32,
+    #[deprecated(since = "5.2.0", note = "Will be removed in 6.0.0")]
+    pub converted_mana_cost: Option<f32>,
 
     /// The card rank on EDHRec.
     pub edhrec_rank: Option<u32>,
 
     /// The converted mana cost or mana value for the face for either half or part of the card. Use the `face_mana_value` property.
-    #[deprecated]
+    #[deprecated(since = "5.2.0", note = "Will be removed in 6.0.0")]
     pub face_converted_mana_cost: Option<f32>,
 
     /// The mana value of the face for either half or part of the card. Formally known as "converted mana cost".
@@ -121,7 +121,7 @@ pub struct AtomicCard {
     pub mana_cost: Option<String>,
 
     /// The mana value of the card. Formally known as "converted mana cost".
-    pub mana_value: f32,
+    pub mana_value: Option<f32>,
 
     /// The name of the card. Cards with multiple faces, like "Split" and "Meld" cards are given a delimiter.
     pub name: String,
@@ -136,7 +136,7 @@ pub struct AtomicCard {
     pub purchase_urls: PurchaseUrls,
 
     /// The official rulings of the card.
-    pub rulings: Vec<Ruling>,
+    pub rulings: Option<Vec<Ruling>>,
 
     /// The identifier of the card side. Used on cards with multiple faces on the same card.
     pub side: Option<Side>,
@@ -169,6 +169,9 @@ pub struct SetCard {
     /// The name of the artist that illustrated the card art.
     pub artist: Option<String>,
 
+    /// A list of identifiers for the artists that illustrated the card art.
+    pub artist_ids: Option<Vec<String>>,
+
     /// The ASCII (Basic/128) code formatted card name with no special unicode characters.
     pub ascii_name: Option<String>,
 
@@ -196,8 +199,8 @@ pub struct SetCard {
     /// A list of all the colors in `mana_cost` and `color_indicator`. Some cards may not have values, such as cards with "Devoid" in its text.
     pub colors: Vec<Color>,
 
-    /// The converted mana cost of the card. Use the mana_value property.
-    #[deprecated]
+    /// The converted mana cost of the card. Use the `mana_value` property.
+    #[deprecated(since = "5.2.0", note = "Will be removed in 6.0.0")]
     pub converted_mana_cost: f32,
 
     /// The duel deck this card was included in.
@@ -207,7 +210,7 @@ pub struct SetCard {
     pub edhrec_rank: Option<u32>,
 
     /// The converted mana cost or mana value for the face for either half or part of the card. Use the `face_mana_value` property.
-    #[deprecated]
+    #[deprecated(since = "5.2.0", note = "Will be removed in 6.0.0")]
     pub face_converted_mana_cost: Option<f32>,
 
     /// The flavor name on the face of the card.
@@ -246,12 +249,12 @@ pub struct SetCard {
     /// If the card marked by Wizards of the Coast for having sensitive content. Cards with this property may have missing or degraded properties and values.
     pub has_content_warning: Option<bool>,
 
-    /// If the card can be found in foil. Use the finishes property.
-    #[deprecated]
+    /// If the card can be found in foil. Use the `finishes` property.
+    #[deprecated(since = "5.2.0", note = "Will be removed in 5.3.0")]
     pub has_foil: bool,
 
-    /// If the card can be found in non-foil. Use the finishes property.
-    #[deprecated]
+    /// If the card can be found in non-foil. Use the `finishes` property.
+    #[deprecated(since = "5.2.0", note = "Will be removed in 5.3.0")]
     pub has_non_foil: bool,
 
     /// A list of identifiers associated to a card.
@@ -285,6 +288,7 @@ pub struct SetCard {
     pub is_reserved: Option<bool>,
 
     /// If the card is found in a starter deck such as Planeswalker/Brawl decks.
+    #[deprecated(since = "5.2.1", note = "Will be removed in 5.3.0")]
     pub is_starter: Option<bool>,
 
     /// If the card is a Story Spotlight card.
@@ -369,7 +373,7 @@ pub struct SetCard {
     pub reverse_related: Option<Vec<String>>,
 
     /// The official rulings of the card.
-    pub rulings: Vec<Ruling>,
+    pub rulings: Option<Vec<Ruling>>,
 
     /// The security stamp printed on the card.
     pub security_stamp: Option<SecurityStamp>,
@@ -423,6 +427,9 @@ pub struct SetCard {
 pub struct TokenCard {
     /// The name of the artist that illustrated the card art.
     pub artist: Option<String>,
+
+    /// A list of identifiers for the artists that illustrated the card art.
+    pub artist_ids: Option<Vec<String>>,
 
     /// The ASCII (Basic/128) code formatted card name with no special unicode characters.
     pub ascii_name: Option<String>,
@@ -532,6 +539,7 @@ pub struct TokenCard {
     pub related_cards: Option<RelatedCards>,
 
     /// Reverse related cards.
+    #[deprecated(since = "5.2.1", note = "Will be removed in 5.3.0")]
     pub reverse_related: Vec<String>,
 
     /// The security stamp printed on the card.
